@@ -27,9 +27,9 @@ const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState('');
 
   const sendEmail = (values, { setSubmitting, resetForm }) => {
-    const serviceID = 'service_tdrpy0f';
-    const templateID = 'template_3i6kgel';
-    const userID = 'du-wk7R1-yjDCn-ez';  //Public Key
+    const serviceID = '';
+    const templateID = '';
+    const userID = '';  //Public Key
 
     emailjs
       .send(serviceID, templateID, values, userID)
