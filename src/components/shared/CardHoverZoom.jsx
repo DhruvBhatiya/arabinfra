@@ -1,11 +1,9 @@
 import React from 'react';
-// import { makeStyles } from '@mui/styles';
-import { styled } from '@mui/material/styles';
-
+import { makeStyles } from '@mui/styles';
 import { Box, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-const useStyles = styled({
+const useStyles = makeStyles({
     cardWrapper: {
         position: 'relative',
         overflow: 'hidden',

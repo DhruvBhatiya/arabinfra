@@ -22,6 +22,7 @@ import { commanBanner } from './Images';
 import Products from './pages/products';
 import Services from './pages/service';
 import ServiceDetails from './pages/service/service-details';
+import ChatGPt from './pages/gpt';
 
 
 
@@ -34,6 +35,7 @@ function App() {
   const Products__ = withBanner(Products, `${commanBanner}`, 'Products');
   const Media__ = withBanner(Media, `${commanBanner}`, 'Media');
   const ContactUs__ = withBanner(ContactUs, `${commanBanner}`, 'Contact Us');
+
 
   
   return (
@@ -50,6 +52,7 @@ function App() {
         </Route>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About__ />} />
+        {/* <Route path="/gpt" element={<ChatGPt />} /> */}
         <Route path="/services" element={<Services__ />} />
         <Route path="/services/details" element={<ServiceDetails__ />} />
 
