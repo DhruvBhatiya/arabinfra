@@ -62,5 +62,12 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.4.7"
+  },
+  "engines": {
+    "node": "20.x"
+  },
+  "build": {
+    "command": "npm install && npm run build"
   }
+
 }
