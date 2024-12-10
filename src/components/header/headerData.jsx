@@ -14,8 +14,8 @@ export const menuListDesktop = [
         link: '/services',
     },
     {
-        title: 'Products',
-        link: '/products',
+        title: 'Projects',
+        link: '/projects',
     },
     // {
     //     title: 'Our Products',

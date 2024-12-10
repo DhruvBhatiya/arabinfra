@@ -2,7 +2,7 @@
   "name": "arabinfradesign",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/",
+  "homepage": "https://dndsolutions.in/apps/arabinfra/",
   "dependencies": {
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
@@ -33,6 +33,7 @@
     "redux-thunk": "^3.1.0",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4",
+    "yarn": "^1.22.22",
     "yup": "^1.4.0"
   },
   "scripts": {

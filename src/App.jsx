@@ -19,8 +19,9 @@ import ProtectedRoute from "./state-management/admin/login/ProtectedRoute";
 // Images 
 import ScrollToTop from './components/shared/ScrollToTop';
 import { commanBanner } from './Images';
-import Products from './pages/products';
+
 import Services from './pages/service';
+import Projects from './pages/projects';
 import ServiceDetails from './pages/service/service-details';
 import ChatGPt from './pages/gpt';
 
@@ -32,11 +33,11 @@ function App() {
   const About__ = withBanner(About, `${commanBanner}`, 'About Us');
   const Services__ = withBanner(Services, `${commanBanner}`, 'Services');
   const ServiceDetails__ = withBanner(ServiceDetails, `${commanBanner}`, 'Service Details');
-  const Products__ = withBanner(Products, `${commanBanner}`, 'Products');
+  const Projects__ = withBanner(Projects, `${commanBanner}`, 'Projects');
   const Media__ = withBanner(Media, `${commanBanner}`, 'Media');
   const ContactUs__ = withBanner(ContactUs, `${commanBanner}`, 'Contact Us');
 
-
+const domainLink = "/apps/arabinfra/"
   
   return (
     <Router>
@@ -50,7 +51,7 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route path="/admin/dashboard" element={<AdminDashboards />} />
         </Route>
-        <Route path="/" element={<Home />} />
+        <Route path={`/`} element={<Home />} />
         <Route path="/about" element={<About__ />} />
         {/* <Route path="/gpt" element={<ChatGPt />} /> */}
         <Route path="/services" element={<Services__ />} />
@@ -61,7 +62,7 @@ function App() {
           <Route path="details" element={<ServiceDetails__ />} />
         </Route> */}
 
-        <Route path="/products" element={<Products__ />} />
+        <Route path="/projects" element={<Projects__ />} />
         <Route path="/media" element={<Media__ />} />
         <Route path="/contact" element={<ContactUs__ />} />
 

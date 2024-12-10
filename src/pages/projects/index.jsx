@@ -7,9 +7,9 @@ import {
   Container1140
 } from "../../components/shared/CustomContainer";
 import { useStylesGloble } from "../../global.style";
-import { settingsSlider, slidesMain } from "./productData";
+import { settingsSlider, slidesMain } from "./projectsData";
 
-const Products = () => {
+const Projects = () => {
   const global = useStylesGloble();
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const Products = () => {
       <Container1140>
         <CustomTabs />
       </Container1140>
-      <Container100 className={global.rootServices}>
+      {/* <Container100 className={global.rootServices}>
         <CarouselComponent settings={settingsSlider} slides={slidesMain}>
           {slidesMain.map((slide, index) => (
             <Box key={index} className={global.slide}>
@@ -37,9 +37,9 @@ const Products = () => {
             </Box>
           ))}
         </CarouselComponent>
-      </Container100>
+      </Container100> */}
     </>
   );
 };
 
-export default Products;
+export default Projects;
