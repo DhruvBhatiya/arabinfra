@@ -37,7 +37,7 @@ const Download = () => {
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={2}>
             {downloadData.map((db, index) => (
-              <Grid item lg={3} md={4} sm={12} xs={12}>
+              <Grid item lg={2} md={4} sm={12} xs={12}>
                 <CardMuiDownload data={db} index={index} />
               </Grid>
             ))}

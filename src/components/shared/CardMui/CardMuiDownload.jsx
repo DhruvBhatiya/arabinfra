@@ -4,8 +4,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import DownloadIcon from '@mui/icons-material/Download';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf'; // Import PDF Icon
 import './CardMui.css'; // Import CSS file
-import { fontSize } from '@mui/system';
+import HomeWorkIcon from '@mui/icons-material/HomeWork';
 
 export default function CardMuiDownload({ data, index }) {
     const titleStyle = {
@@ -30,6 +31,10 @@ export default function CardMuiDownload({ data, index }) {
         whiteSpace: 'normal',
     };
 
+    // Check if file is a PDF
+    const isPdf = data.image.toLowerCase().endsWith('.pdf');
+    const isDwg = data.image.toLowerCase().endsWith('.dwg');
+
     return (
         <Card
             key={index}
@@ -37,14 +42,29 @@ export default function CardMuiDownload({ data, index }) {
             sx={{ maxWidth: '100%', margin: '0 auto', position: 'relative' }}
         >
             <div className="image-container">
-                <CardMedia
-                style={{height: '200px'}}
-                    component="img"
-                    height="140"
-                    image={data.image}
-                    alt={data.title}
-                    className="card-image"
-                />
+                {/* If it's a PDF, show the PDF icon, else show the image */}
+                {isPdf ? (
+                    <div className="pdf-icon-container flex justify-center items-center">
+                        <PictureAsPdfIcon fontSize="large" className="pdf-icon " style={{ width: 100, height: 100 }} />
+                    </div>
+                ) :
+                    isDwg ?
+                        <div className="pdf-icon-container flex justify-center items-center">
+                            <HomeWorkIcon fontSize="large" className="pdf-icon " style={{ width: 100, height: 100 }} />
+                        </div>
+                        :
+
+                        (
+                            <CardMedia
+                                style={{ height: '100px' }}
+                                component="img"
+                                height="140"
+                                image={data.image}
+                                alt={data.title}
+                                className="card-image"
+                            />
+                        )}
+
                 <a
                     href={data.image}
                     download={data.title}
@@ -54,7 +74,7 @@ export default function CardMuiDownload({ data, index }) {
                     <DownloadIcon className="download-icon" />
                 </a>
             </div>
-            <CardContent style={{paddingBottom: 16}}>
+            <CardContent style={{ paddingBottom: 16 }}>
                 <Typography
                     gutterBottom
                     variant="h5"

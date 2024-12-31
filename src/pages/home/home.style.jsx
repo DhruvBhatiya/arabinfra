@@ -293,7 +293,6 @@ export const useStyles = makeStyles(() => ({
 
 
     whyChooseStyle: {
-        "padding": "70px 0 70px 0",
         "backgroundImage": `url(${whyChooseBg})`,
         "backgroundRepeat": "no-repeat", "backgroundPosition": "center -250px", "backgroundSize": "cover",
 

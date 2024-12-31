@@ -17,6 +17,9 @@ const validationSchema = Yup.object({
   email: Yup.string()
     .email('Enter a valid email')
     .required('Email is required'),
+  mobile: Yup.string()
+    .required('Mobile number is required')
+    .matches(/^[0-9]{10}$/, 'Mobile number must be 10 digits'),
   subject: Yup.string().required('Subject is required'),
   message: Yup.string()
     .required('Message is required')
@@ -39,6 +42,7 @@ const ContactForm = () => {
     const emailData = new FormData();
     emailData.append('name', values.name);
     emailData.append('email', values.email);
+    emailData.append('mobile', values.mobile); // Add mobile number
     emailData.append('subject', values.subject);
     emailData.append('message', values.message);
 
@@ -77,6 +81,7 @@ const ContactForm = () => {
         initialValues={{
           name: '',
           email: '',
+          mobile: '', // New mobile field
           subject: '',
           message: '',
           attachment: null,
@@ -125,6 +130,17 @@ const ContactForm = () => {
                   variant="outlined"
                   error={touched.email && Boolean(errors.email)}
                   helperText={touched.email && errors.email}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Field
+                  as={TextField}
+                  fullWidth
+                  name="mobile"
+                  label="Mobile Number"
+                  variant="outlined"
+                  error={touched.mobile && Boolean(errors.mobile)}
+                  helperText={touched.mobile && errors.mobile}
                 />
               </Grid>
               <Grid item xs={12}>

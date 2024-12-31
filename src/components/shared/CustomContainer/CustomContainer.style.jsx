@@ -22,6 +22,7 @@ export const useStyles = makeStyles(() => ({
   container1200: {
     maxWidth: '1200px',
     margin: '0 auto',
+    padding: '80px 0'
   },
   container1440:{
     maxWidth: '1440px',
@@ -45,6 +46,13 @@ export const useStyles = makeStyles(() => ({
     [theme.breakpoints.down('md')]: {
       paddingLeft: 0,
       paddingRight: 0,
+
+      container1200: {
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '40px 0'
+      },
+
     },
   },
   heading: {

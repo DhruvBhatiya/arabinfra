@@ -15,7 +15,7 @@ const Footer = () => {
     const location = useLocation();
     const path = location.pathname;
     const isAdmin = path.includes("admin");
-
+    const currentYear = new Date().getFullYear();
     const TitleHead = ({ title }) => {
         return (
             <h1 className={classes.titleHead}>{title}</h1>
@@ -67,13 +67,11 @@ const Footer = () => {
                         </Box> */}
                     </Box>
                     {/* 2 */}
-                    <Box className={classes.rowBottom}>
-
+                    <Box className={classes.rowBottom + ' ' + 'border-t-2 border-solid pt-4 mt-4'}>
                         <Box className={''}>
-                            <p>Design By <span><b>Dhruv Computers</b></span> - 2024</p>
+                            <p>Design By <span><b>Dhruv Computers</b></span> - {currentYear}</p>
                         </Box>
                         <Box>
-
                         </Box>
                     </Box>
                 </Container1200>

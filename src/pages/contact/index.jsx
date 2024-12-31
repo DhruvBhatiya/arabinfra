@@ -22,7 +22,7 @@ const Contact = () => {
   return (
     <>
       <Box className={classes.productsSliderStyle + ' ' + 'pb-7'}>
-      
+
         {/* <TitleSection title={"Feel free to contact us"} className={"productTitle"} /> */}
         <Container1200 className={'pt-12 pb-6 lg:px-0 px-2'}>
           <h1 className='text-4xl font-semibold mb-6'>Feel free to contact us</h1>
@@ -34,9 +34,7 @@ const Contact = () => {
                 <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
                   <h2 className="text-2xl font-semibold mb-4">Registered office</h2>
                   <p className="mb-4">
-                    Mehsana,
-                    <br />
-                    Gujarat 384001
+                    S-22/23 PALIKA BAZAR, <br />opp. A DIVISION POLICE STATION, <br />Mehsana, Gujarat 384001
                   </p>
 
                   {/* <h2 className="text-2xl font-semibold mb-4">Branch office</h2>
@@ -48,15 +46,15 @@ const Contact = () => {
 
                   <p className="mb-4">
                     <strong>Phone:</strong>
-                    +919999999999
+                    <a href="tel:+919726724670">+91 9726724670</a>
                   </p>
                   <p className="mb-4">
-                    <strong>Email:</strong> help@temp.in
+                    <strong>Email:</strong> <a href="mailto:vipul.msh@gmail.com">vipul.msh@gmail.com</a> / <a href="mailto:arab.infradesign@gmail.com">arab.infradesign@gmail.com</a>
                   </p>
                   <p className="mb-4">
                     <strong>Business Hours:</strong>
                     <br />
-                    Monday - Saturday: 9:30 AM to 6:00 PM
+                    Monday - Saturday: 10:00 AM to 8:00 PM
                   </p>
                 </div>
               </div>

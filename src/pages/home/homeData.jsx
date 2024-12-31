@@ -11,6 +11,9 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import NearMeIcon from '@mui/icons-material/NearMe';
 import PersonIcon from '@mui/icons-material/Person';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import PeopleIcon from '@mui/icons-material/People';
+import HeadphonesIcon from '@mui/icons-material/Headphones';
+
 
 import aboutImg from '../../assets/img/images/about/about.webp';
 
@@ -23,6 +26,7 @@ import layoutLandDevelopment from '../../assets/services/layout-and-land-develop
 import onlineDevelopment from '../../assets/services/online-development.png';
 import planningSupervision from '../../assets/services/planning-and-supervision.png';
 import planning from '../../assets/services/planning.jpg';
+import businessTraining from '../../assets/services/business-training.jpg';
 
 
 // Service 
@@ -31,9 +35,9 @@ import { nobanner, noImage, slider1, slider2, slider3, slider5, } from '../../Im
 
 // Main Slider 
 export const slidesMain = [
-  { image: slider1, content: 'This is the first slide' },
-  { image: slider2, content: 'This is the second slide' },
-  { image: slider3, content: 'This is the third slide' },
+  { image: slider1, content: '"Trust on work beyond image and imagination"' },
+  { image: slider2, content: '"Trust on work beyond image and imagination"' },
+  { image: slider3, content: '"Trust on work beyond image and imagination"' },
 ];
 // Main Slider Setting 
 // export const settingsMainSlider = {
@@ -147,6 +151,8 @@ export const slidesProducts = [
     content: ['In architectural work, strive to blend functionality with aesthetic elegance, creating spaces that inspire and uplift the human experience. Drawing upon a deep understanding of architectural principles, engage in a collaborative process that values both creativity and practicality. Each design is meticulously crafted, paying close attention to the interplay of light, form, and materiality to evoke a sense of harmony and tranquility within the built environment. Whether designing a residential retreat, a commercial complex, or a public space, my goal is to imbue every project with a timeless quality that resonates with its users and enhances the surrounding community. Through thoughtful consideration of context, sustainability, and human behavior, seek to create architecture that not only fulfills its intended purpose but also enriches the lives of those who inhabit it. ', 'We are with a good learned and experienced architecture team. We provide you a good architectural aspects and views for your building. And with the interior we made your building fruitful and luxurious. Or we made as you want. You think, We made'] },
   { image: onlineDevelopment, title: 'Online Development  you can avail at your doorstep or wherever you are. ', link: '/services/details/108',
     content: ['By online development, we made easy the building work. You don’t worry to go table to table. We made this easy. We work for you. you just have to contact us through our website, or email. we provide you all related help or service. not only we provide services...but also our services are tremendously welcomed by our customers '] },
+  { image: businessTraining, title: 'Business Training', link: '/services/details/109',
+    content: ['We provide solution and training to new startup.'] },
 
 ];
 
@@ -393,9 +399,9 @@ export const WhyChooseData = [
   { icon: <AccessAlarmsIcon />, title: 'Timely Delivery' },
   { icon: <NearMeIcon />, title: 'Modern Technology' },
   { icon: <CurrencyRupeeIcon />, title: 'Affordable Prices' },
-  { icon: <PersonIcon />, title: 'Customer Support' },
-  { icon: <LocationOnIcon />, title: 'Wide Distribution Network' },
-  { icon: <LocalShippingIcon />, title: 'Strong Logistics Support' },
+  { icon: <HeadphonesIcon />, title: 'Customer Support' },
+  { icon: <LocationOnIcon />, title: 'Wide Network' },
+  { icon: <PeopleIcon />, title: 'Lifetime Membership' },
   { icon: <CheckBoxIcon />, title: 'Reliable & Trusted Services' },
 
 ];

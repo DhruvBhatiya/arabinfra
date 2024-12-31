@@ -65,7 +65,7 @@ const Home = () => {
           {slidesMain.map((slide, index) => (
             <Box key={index} className={global.slide}>
               <img className={global.bannerImg} src={slide.image} alt="" />
-              {/* <h1 className='title'>{slide.content}</h1> */}
+              <h1 className='title'>{slide.content}</h1>
             </Box>
           ))}
         </CarouselComponent>
@@ -118,9 +118,9 @@ const Home = () => {
 
       {/* Services */}
       <Box className={classes.productsSliderStyle + ' ' + " "}>
-        <Box className={"bg-[#0000006b]  py-[70px] "}>
-          <TitleSection title={"Our Services"} className={"productTitle"} />
+        <Box className={"bg-[#0000006b]  "}>
           <Container1200 className={"  "} >
+            <TitleSection title={"Our Services"} className={"productTitle"} />
             <CarouselComponent settings={settingsProductsSlider} >
               {slidesProducts.map((slide, index) => (
                 <CarouselCard slide={slide} />
@@ -132,9 +132,9 @@ const Home = () => {
       {/* Why Choose Arab Infradesign ? */}
       <Box className={classes.whyChooseStyle}>
         <Box className="lg:px-0 px-2">
-          <TitleSection title={"Why Choose Arab Infradesign ?"} className={"productTitle"} />
-          <div className="servece-0111" />
           <Container1200 className={"  "} >
+            <TitleSection title={"Why Choose Arab Infradesign ?"} className={"productTitle"} />
+            <div className="servece-0111" />
             <Grid container spacing={2}>
               {WhyChooseData && WhyChooseData.map((db, index) => (
                 <Grid item lg={3} xs={4}>

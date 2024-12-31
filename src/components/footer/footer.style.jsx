@@ -3,7 +3,7 @@ import { theme } from "../../theme";
 
 export const useStyles = makeStyles(() => ({
     footerStyle: {
-        "paddingTop": "80px", "paddingBottom": "50px", "background": "black", "color": "white"
+         "background": "black", "color": "white"
     },
     row: {
         "display": "grid", "gridGap": "60px",
@@ -55,7 +55,8 @@ export const useStyles = makeStyles(() => ({
         },
 
         rowBottom: {
-            marginTop: '40px'
+            marginTop: '40px',
+            borderTop: '1px solid'
         }
     },
 
