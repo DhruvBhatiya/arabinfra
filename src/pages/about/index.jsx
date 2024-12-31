@@ -4,7 +4,7 @@ import { Container1200 } from '../../components/shared/CustomContainer';
 
 import { useStyles } from './about.style';
 
-
+const joinCotent = ['Highlights sub work services.', 'Lifetime Membership', 'Training Courses.', 'Construction related services.', 'A well developed youtuber', 'Best informative ideology.', 'Digital / Virtual Services.', 'Third party work / consultancy.']
 
 const About = () => {
   const classes = useStyles();
@@ -37,11 +37,14 @@ const About = () => {
                     Founded in 2017, Arab Infradesign is a forward-thinking company dedicated to providing high-quality, innovative solutions across various industries. With a diverse product portfolio, we specialize in manufacturing:
                   </Typography>
 
-                  {/* <ul className="list-disc list-inside pl-4 space-y-2 mb-4 text-base">
-                    <li><strong>Lorem Ipsum is simply dummy text:</strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</li>
-                    <li><strong>Lorem Ipsum is simply dummy text:</strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </li>
-                   
-                  </ul> */}
+                  <Typography component="div" variant="h6" sx={{ marginBottom: '15px', fontWeight: '600' }}>
+                    Why Join Arab Infradesign
+                  </Typography>
+                  <ul className="list-disc list-inside pl-4 space-y-2 mb-4 text-base">
+                    {joinCotent.map((e) => (
+                      <li>{e}</li>
+                    ))}
+                  </ul>
 
                   <Typography variant="body2" color="text.secondary" component="p" sx={{ marginBottom: '16px', fontSize: '16px' }}>Thank you for choosing Arab Infradesign. We look forward to partnering with you and contributing to your achievements.</Typography>
                 </CardContent>

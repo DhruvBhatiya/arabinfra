@@ -35,8 +35,6 @@ import buildingPermission from './assets/download/building-permission.jpg'
 import doc from './assets/download/doc.jpg'
 import villageBuildingPermission from './assets/download/village-building-permission.jpg'
 
-
-
 // Courses 
 import ALL_COMBO from './assets/courses/ALL_COMBO.PNG'
 import BASIC from './assets/courses/BASIC.PNG'
@@ -44,11 +42,6 @@ import BASIC_COMBO from './assets/courses/BASIC_COMBO.PNG'
 import COMMERICAL_COMBO from './assets/courses/COMMERICAL_COMBO.PNG'
 import COMMERICAL_LAYOUT from './assets/courses/COMMERICAL_LAYOUT.PNG'
 import RESIDENTIAL_LAYOUT from './assets/courses/RESIDENTIAL_LAYOUT.PNG'
-
-
-
-
-
 
 // OurProduct 
 import OrganicFertilizersImg from './assets/img/ourProducts/OrganicFertilizers.jpg'

@@ -1,8 +1,8 @@
 import {
   Box,
-  Button,
   Grid,
-  TextField
+  TextField,
+  MenuItem,
 } from '@mui/material';
 import emailjs from 'emailjs-com';
 import { Field, Form, Formik } from 'formik';
@@ -17,37 +17,49 @@ const validationSchema = Yup.object({
   email: Yup.string()
     .email('Enter a valid email')
     .required('Email is required'),
+  subject: Yup.string().required('Subject is required'),
   message: Yup.string()
     .required('Message is required')
     .min(10, 'Message must be at least 10 characters'),
+  attachment: Yup.mixed()
+    .test('fileSize', 'File size is too large', (value) =>
+      value ? value.size <= 2 * 1024 * 1024 : true // 2MB limit
+    )
+    .notRequired(),
 });
 
 const ContactForm = () => {
-
   const [isSubmitted, setIsSubmitted] = useState('');
 
   const sendEmail = (values, { setSubmitting, resetForm }) => {
     const serviceID = '';
     const templateID = '';
-    const userID = '';  //Public Key
+    const userID = ''; // Public Key
+
+    const emailData = new FormData();
+    emailData.append('name', values.name);
+    emailData.append('email', values.email);
+    emailData.append('subject', values.subject);
+    emailData.append('message', values.message);
+
+    if (values.attachment) {
+      emailData.append('attachment', values.attachment);
+    }
 
     emailjs
-      .send(serviceID, templateID, values, userID)
-      .then((response) => {
-        // alert('Thank you! Your message has been sent successfully.');
-        setIsSubmitted('Submitted successfully, we will get back to you soon')
+      .send(serviceID, templateID, emailData, userID)
+      .then(() => {
+        setIsSubmitted('Submitted successfully, we will get back to you soon');
         resetForm();
         setSubmitting(false);
       })
-      .catch((error) => {
-        // alert('Failed to send the message. Please try again later.');
-        setIsSubmitted('Failed to send the message. Please try again later.')
+      .catch(() => {
+        setIsSubmitted('Failed to send the message. Please try again later.');
         setSubmitting(false);
       });
   };
 
   return (
-
     <Box
       sx={{
         display: 'flex',
@@ -55,20 +67,44 @@ const ContactForm = () => {
         alignItems: 'center',
       }}
     >
-
-      {isSubmitted ?
-        <p className='font-semibold text-green-600'>{isSubmitted}</p>
-        : <p className='font-semibold text-red-600'>{isSubmitted}</p>}
-
+      {isSubmitted ? (
+        <p className="font-semibold text-green-600">{isSubmitted}</p>
+      ) : (
+        <p className="font-semibold text-red-600">{isSubmitted}</p>
+      )}
 
       <Formik
-        initialValues={{ name: '', email: '', message: '' }}
+        initialValues={{
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+          attachment: null,
+        }}
         validationSchema={validationSchema}
         onSubmit={sendEmail}
       >
-        {({ errors, touched, isSubmitting }) => (
+        {({ errors, touched, setFieldValue, values, isSubmitting }) => (
           <Form>
             <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <Field
+                  as={TextField}
+                  select
+                  fullWidth
+                  name="subject"
+                  label="Subject"
+                  variant="outlined"
+                  error={touched.subject && Boolean(errors.subject)}
+                  helperText={touched.subject && errors.subject}
+                >
+                  <MenuItem value="Training">Training</MenuItem>
+                  <MenuItem value="Business inquiry">Business inquiry</MenuItem>
+                  <MenuItem value="Upload your documents">
+                    Upload your documents
+                  </MenuItem>
+                </Field>
+              </Grid>
               <Grid item xs={12}>
                 <Field
                   as={TextField}
@@ -104,6 +140,20 @@ const ContactForm = () => {
                   helperText={touched.message && errors.message}
                 />
               </Grid>
+              {values.subject === 'Upload your documents' && (
+                <Grid item xs={12}>
+                  <input
+                    type="file"
+                    accept="application/pdf,image/*"
+                    onChange={(event) =>
+                      setFieldValue('attachment', event.currentTarget.files[0])
+                    }
+                  />
+                  {errors.attachment && touched.attachment && (
+                    <p className="text-red-600 text-sm">{errors.attachment}</p>
+                  )}
+                </Grid>
+              )}
               <Grid item xs={12}>
                 <ButtonBorder
                   type="submit"
@@ -120,7 +170,6 @@ const ContactForm = () => {
         )}
       </Formik>
     </Box>
-
   );
 };
 
