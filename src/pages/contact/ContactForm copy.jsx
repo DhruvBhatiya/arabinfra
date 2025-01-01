@@ -38,15 +38,18 @@ const ContactForm = () => {
     const serviceID = 'service_68r7ee1';
     const templateID = 'template_atfhiht';
     const userID = 'owmcB0tBHvjSWlAU6'; // Public Key
-  
-    const emailData = {
-      name: values.name,
-      email: values.email,
-      mobile: values.mobile,
-      subject: values.subject,
-      message: values.message,
-    };
-  
+
+    const emailData = new FormData();
+    emailData.append('name', values.name);
+    emailData.append('email', values.email);
+    emailData.append('mobile', values.mobile); // Add mobile number
+    emailData.append('subject', values.subject);
+    emailData.append('message', values.message);
+
+    if (values.attachment) {
+      emailData.append('attachment', values.attachment);
+    }
+
     emailjs
       .send(serviceID, templateID, emailData, userID)
       .then(() => {

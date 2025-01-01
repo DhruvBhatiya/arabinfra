@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import ScrollToTop from "react-scroll-to-top";
-import { menuListMobile } from '../header/headerData';
+import { menuListDesktop, menuListMobile } from '../header/headerData';
 import { Container10, Container100, Container1140, Container1200, Container1320, Container1400, Container1440 } from '../shared/CustomContainer';
 import { useStyles } from './footer.style';
 import { ProductsLinks } from './footerData';
@@ -31,15 +31,20 @@ const Footer = () => {
 
                         <Box className={'footer-form'}>
                             <TitleHead title="About Arab Infradesign" />
-                            <p>Founded in 2017, Arab Infradesign is a forward-thinking company dedicated to providing high-quality, innovative solutions across various industries. With a diverse product portfolio, we specialize in manufacturing:</p>
+                            <p>Arab Infradesign is the civil engineering and consultancy, is started in 2020 may 5th till onwards we executed more than 50000+ successful drawing works, consultancies, and queries solving. Our motto and slogan is, ‘’trust on work beyond image and imagination’’ we are not business we are promise. We are with proper skilled professionals and excellent staff.</p>
                         </Box>
 
                         <Box>
                             <TitleHead title="Quick Links" />
                             <Box className={classes.quicklinks}>
-                                <NavLink className={'link'} to={'/'}>About Us</NavLink>
-                                <NavLink className={'link'} to={'/gallery'}>Gallery</NavLink>
-                                <NavLink className={'link'} to={'/contact'}>Contact Us</NavLink>
+                                {menuListDesktop.map((db, index) => {
+                                    return (
+                                        db.link !== '/' && (
+                                            <NavLink key={index} className={'link'} to={db.link}>{db.title}</NavLink>
+                                        )
+                                    )
+                                }
+                                )}
                             </Box>
                         </Box>
 

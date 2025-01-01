@@ -28,10 +28,10 @@ export const Container1140 = ({ children, className }) => {
     </Box>
   );
 };
-export const Container1200 = ({ children, className }) => {
+export const Container1200 = ({ children, className, style }) => {
   const classes = useStyles();
   return (
-    <Box className={classes.container1200 + ' ' + className}>
+    <Box className={classes.container1200 + ' ' + className} style={style}>
       {children}
     </Box>
   );

@@ -16,7 +16,7 @@ export const useStyles = makeStyles(() => ({
     backgroundColor: "#fff !important",
     position: "fixed",
     top: "0",
-    boxShadow: "0 2px 3px rgba(96, 96, 96, .1)",
+    boxShadow: "0 2px 20px #0000002e",
     zIndex: "1111",
     "& .MuiPaper-root": {
       boxShadow: "0 2px 3px rgba(96, 96, 96, .1)",
@@ -146,6 +146,14 @@ export const useStyles = makeStyles(() => ({
       maxWidth: "200px",
       width: 'auto',
       height: '69px'
+    },
+  },
+  youtubeLogo: {
+    marginLeft: '60px',
+    "& img": {
+      maxWidth: "150px",
+      width: 'auto',
+      // height: '59px'
     },
   },
   [theme.breakpoints.down("db")]: {

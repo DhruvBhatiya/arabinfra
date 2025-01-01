@@ -9,7 +9,7 @@ import DrawerRight from "../DrawerRight";
 import { Container10 } from "../shared/CustomContainer";
 import { useStyles } from "./header.style";
 import { adminLinks, menuListDesktop } from "./headerData";
-// import logo from "../../assets/img/images/logo.png"
+import youtubeLogo from "../../assets/img/logo/youtube.png"
 const Header = () => {
   const classes = useStyles();
   const location = useLocation();
@@ -96,9 +96,12 @@ const Header = () => {
               </NavLink>
             </Box>
 
+
             {!isAdmin && (
               <Box className={classes.phoneIcon}>
-                <PhoneInTalkIcon />
+                <NavLink to="/contact">
+                  <PhoneInTalkIcon />
+                </NavLink>
               </Box>
             )}
 
@@ -166,6 +169,12 @@ const Header = () => {
             {token && (
               <Button onClick={handleLogout} color="inherit">Logout</Button>
             )}
+
+            <Box className={classes.youtubeLogo + ' ' + ' hidden md:block'}>
+              <a href="https://youtube.com/@vipul2412?si=zwxa_iN6YTT_0q94" target="_blank">
+                <img src={youtubeLogo} alt="My Image 11" className="w-32" />
+              </a>
+            </Box>
 
             <DrawerRight menu={menuListDesktop} adminLinks={adminLinks} isAdmin={isAdmin} />
           </Toolbar>

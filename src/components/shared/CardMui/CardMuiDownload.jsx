@@ -45,7 +45,7 @@ export default function CardMuiDownload({ data, index }) {
                 {/* If it's a PDF, show the PDF icon, else show the image */}
                 {isPdf ? (
                     <div className="pdf-icon-container flex justify-center items-center">
-                        <PictureAsPdfIcon fontSize="large" className="pdf-icon " style={{ width: 100, height: 100 }} />
+                        <PictureAsPdfIcon fontSize="large" className="pdf-icon " style={{ width: 100, height: 100, color: 'red' }} />
                     </div>
                 ) :
                     isDwg ?
