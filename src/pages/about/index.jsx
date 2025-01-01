@@ -34,7 +34,7 @@ const About = () => {
                   </Typography>
 
                   <Typography variant="body2" color="text.secondary" component="p" sx={{ marginBottom: '16px', fontSize: '16px' }}>
-                    Founded in 2017, Arab Infradesign is a forward-thinking company dedicated to providing high-quality, innovative solutions across various industries. With a diverse product portfolio, we specialize in manufacturing:
+                    Arab Infradesign is the civil engineering and consultancy, is started in 2020 may 5th till onwards we executed more than 50000+ successful drawing works, consultancies, and queries solving. Our motto and slogan is, ‘’trust on work beyond image and imagination’’ we are not business we are promise. We are with proper skilled professionals and excellent staff.
                   </Typography>
 
                   <Typography component="div" variant="h6" sx={{ marginBottom: '15px', fontWeight: '600' }}>

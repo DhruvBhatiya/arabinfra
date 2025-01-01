@@ -65,7 +65,9 @@ const Home = () => {
           {slidesMain.map((slide, index) => (
             <Box key={index} className={global.slide}>
               <img className={global.bannerImg} src={slide.image} alt="" />
-              <h1 className='title'>{slide.content}</h1>
+              <div className={'w-96 lg:w-full'}>
+                <h1 className='title '>{slide.content}</h1>
+              </div>
             </Box>
           ))}
         </CarouselComponent>

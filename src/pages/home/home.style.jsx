@@ -321,7 +321,15 @@ export const useStyles = makeStyles(() => ({
         main_slider: {
             "& .slick-list": {
                 height: '31vh'
-            }
+            },
+            "& .title": {
+                fontSize: '24px',
+                width: '80%'
+            },
+
+            "& .title": {
+                "fontSize":"2rem","fontWeight":"bold","textAlign":"center","wordWrap":"break-word","whiteSpace":"normal","overflow":"hidden","lineHeight":"1.5"
+              }
         },
 
         ourCounter: {
