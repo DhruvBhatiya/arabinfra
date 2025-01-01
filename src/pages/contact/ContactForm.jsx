@@ -3,12 +3,20 @@ import {
   Grid,
   TextField,
   MenuItem,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Button,
 } from '@mui/material';
 import emailjs from 'emailjs-com';
 import { Field, Form, Formik } from 'formik';
 import React, { useState } from 'react';
 import * as Yup from 'yup';
 import { ButtonBorder } from '../../components/shared/ButtonCustom';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+
 
 const validationSchema = Yup.object({
   name: Yup.string()
@@ -32,13 +40,19 @@ const validationSchema = Yup.object({
 });
 
 const ContactForm = () => {
-  const [isSubmitted, setIsSubmitted] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(true); // Tracks success or error
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   const sendEmail = (values, { setSubmitting, resetForm }) => {
     const serviceID = 'service_68r7ee1';
     const templateID = 'template_atfhiht';
     const userID = 'owmcB0tBHvjSWlAU6'; // Public Key
-  
+
     const emailData = {
       name: values.name,
       email: values.email,
@@ -46,16 +60,20 @@ const ContactForm = () => {
       subject: values.subject,
       message: values.message,
     };
-  
+
     emailjs
       .send(serviceID, templateID, emailData, userID)
       .then(() => {
-        setIsSubmitted('Submitted successfully, we will get back to you soon');
+        setModalMessage('Submitted successfully, we will get back to you soon.');
+        setIsSuccess(true);
+        setIsModalOpen(true);
         resetForm();
         setSubmitting(false);
       })
       .catch(() => {
-        setIsSubmitted('Failed to send the message. Please try again later.');
+        setModalMessage('Failed to send the message. Please try again later.');
+        setIsSuccess(false);
+        setIsModalOpen(true);
         setSubmitting(false);
       });
   };
@@ -68,17 +86,11 @@ const ContactForm = () => {
         alignItems: 'center',
       }}
     >
-      {isSubmitted ? (
-        <p className="font-semibold text-green-600">{isSubmitted}</p>
-      ) : (
-        <p className="font-semibold text-red-600">{isSubmitted}</p>
-      )}
-
       <Formik
         initialValues={{
           name: '',
           email: '',
-          mobile: '', // New mobile field
+          mobile: '',
           subject: '',
           message: '',
           attachment: null,
@@ -182,6 +194,55 @@ const ContactForm = () => {
           </Form>
         )}
       </Formik>
+
+      <Dialog
+        open={isModalOpen}
+        onClose={handleCloseModal}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle
+          id="alert-dialog-title"
+        // sx={{
+        //   bgcolor: isSuccess ? 'lightgreen' : 'red',
+        //   color: '#fff',
+        //   textAlign: 'center',
+        // }}
+        >
+          {isSuccess ? <div className='flex items-center text-green-600 gap-2'>Thank You <CheckCircleOutlineIcon /></div> : <div className='flex items-center text-red-600 gap-2'>Error</div>}
+        </DialogTitle>
+        <DialogContent
+        // sx={{
+        //   bgcolor: isSuccess ? 'lightgreen' : 'red',
+        //   color: '#fff',
+        // }}
+        >
+          <DialogContentText id="alert-dialog-description"
+            sx={{
+              color: isSuccess ? 'black' : 'red',
+            }}
+          >
+            {modalMessage}
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions
+        // sx={{
+        //   bgcolor: isSuccess ? 'green' : 'red',
+        //   justifyContent: 'center',
+        // }}
+        >
+          <Button
+            onClick={handleCloseModal}
+            variant="contained"
+          // sx={{
+          //   bgcolor: '#fff',
+          //   color: isSuccess ? 'green' : 'red',
+          // }}
+          >
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 };
