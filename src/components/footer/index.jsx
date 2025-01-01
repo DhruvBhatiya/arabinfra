@@ -1,13 +1,14 @@
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import { Box } from '@mui/material';
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import ScrollToTop from "react-scroll-to-top";
 import { menuListDesktop, menuListMobile } from '../header/headerData';
 import { Container10, Container100, Container1140, Container1200, Container1320, Container1400, Container1440 } from '../shared/CustomContainer';
 import { useStyles } from './footer.style';
 import { ProductsLinks } from './footerData';
 import { slidesProducts } from '../../pages/home/homeData';
+import Whatsapp from '../shared/WhatsApp';
 
 
 const Footer = () => {
@@ -40,7 +41,7 @@ const Footer = () => {
                                 {menuListDesktop.map((db, index) => {
                                     return (
                                         db.link !== '/' && (
-                                            <NavLink key={index} className={'link'} to={db.link}>{db.title}</NavLink>
+                                            <NavLink key={index} className={'link hover:text-white'} to={db.link}>{db.title}</NavLink>
                                         )
                                     )
                                 }
@@ -54,7 +55,7 @@ const Footer = () => {
                                 {slidesProducts && slidesProducts.map((db, index) => {
                                     return (
                                         db.link !== '/offer-of-month' &&
-                                        <NavLink className={'link'} key={index} to={db.link}>{db.title}</NavLink>
+                                        <NavLink className={'link hover:text-white'} key={index} to={db.link}>{db.title}</NavLink>
                                     )
                                 }
                                 )}
@@ -74,7 +75,7 @@ const Footer = () => {
                     {/* 2 */}
                     <Box className={classes.rowBottom + ' ' + 'border-t-2 border-solid pt-4 mt-4'}>
                         <Box className={''}>
-                            <p>Design By <span><b>Dhruv Computers</b></span> - {currentYear}</p>
+                            <p>© {currentYear} <Link className='text-white' to={'https://arabinfradesign.in/'}>arabinfradesign.in</Link> Design By <span>Dhruv Computers</span> </p>
                         </Box>
                         <Box>
                         </Box>
@@ -87,6 +88,8 @@ const Footer = () => {
                         <KeyboardDoubleArrowUpIcon style={{ fontSize: 25, color: 'black' }} />
                     }
                 />
+
+                <Whatsapp />
             </Box>
         )
     }

@@ -24,8 +24,8 @@ const About = () => {
   return (
     <>
       <Box className={classes.productsSliderStyle}>
-        <Container1200 className={" pt-12 pb-9 "} >
-          <Card sx={{ display: 'flex', marginBottom: '30px', boxShadow: 'none' }}>
+        <Container1200 className={"  "} >
+          <Card sx={{ display: 'flex', marginBottom: '0px', boxShadow: 'none' }}>
             <Grid container spacing={5}>
               <Grid item lg={6} xs={12}>
                 <CardContent sx={{}} >
@@ -60,12 +60,7 @@ const About = () => {
                 </CardContent>
               </Grid>
             </Grid>
-
-
           </Card>
-
-
-
         </Container1200>
 
         {/* Vision Mission  */}

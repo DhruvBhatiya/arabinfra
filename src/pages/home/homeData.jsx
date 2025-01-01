@@ -18,15 +18,16 @@ import HeadphonesIcon from '@mui/icons-material/Headphones';
 import aboutImg from '../../assets/img/images/about/about.webp';
 
 // Product 
-import architectureInterior from '../../assets/services/architecture-and-Interior.png';
+import architectureInterior from '../../assets/services/architecture-and-Interior.jpeg';
 import buildingDesign from '../../assets/services/building-design.jpeg';
-import buildingModernization from '../../assets/services/building-modernization.jpg';
-import buildingPermission from '../../assets/services/building-permission.png';
-import layoutLandDevelopment from '../../assets/services/layout-and-land-development.png';
-import onlineDevelopment from '../../assets/services/online-development.png';
-import planningSupervision from '../../assets/services/planning-and-supervision.png';
-import planning from '../../assets/services/planning.jpg';
-import businessTraining from '../../assets/services/business-training.jpg';
+import buildingModernization from '../../assets/services/building-modernization.jpeg';
+import buildingPermission from '../../assets/services/building-permission.jpeg';
+import layoutLandDevelopment from '../../assets/services/layout-and-land-development.jpeg';
+import onlineDevelopment from '../../assets/services/online-development.jpeg';
+import planningSupervision from '../../assets/services/planning-and-supervision.jpeg';
+import planning from '../../assets/services/planning.jpeg';
+import businessTraining from '../../assets/services/business-training.jpeg';
+import img3D from '../../assets/services/3d.jpeg';
 
 
 // Service 
@@ -153,6 +154,8 @@ export const slidesProducts = [
     content: ['By online development, we made easy the building work. You don’t worry to go table to table. We made this easy. We work for you. you just have to contact us through our website, or email. we provide you all related help or service. not only we provide services...but also our services are tremendously welcomed by our customers '] },
   { image: businessTraining, title: 'Business Training', link: '/services/details/109',
     content: ['We provide solution and training to new startup.'] },
+  { image: img3D, title: '3D, Elevation and Walkthrough', link: '/services/details/110',
+    content: ['We provide 3D, Elevation and Walkthrough.'] },
 
 ];
 
