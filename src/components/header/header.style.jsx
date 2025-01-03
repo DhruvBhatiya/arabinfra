@@ -6,8 +6,8 @@ export const useStyles = makeStyles(() => ({
 
   activeLink: {
     textDecoration: "underline", // Underline for the active link
-    fontWeight: "bold", // Optional: Highlight active link with bold text
-    color: theme.palette.primary.main, // Optional: Change the active link color
+    fontWeight: "bold !important", // Optional: Highlight active link with bold text
+    color: '#022da8 !important' // Optional: Change the active link color
   },
   
   backside: {
@@ -65,6 +65,8 @@ export const useStyles = makeStyles(() => ({
     flexGrow: 1,
   },
   menuItems: {
+
+    
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -149,9 +151,15 @@ export const useStyles = makeStyles(() => ({
     },
   },
   youtubeLogo: {
-    marginLeft: '60px',
     "& img": {
+      marginLeft: '60px',
       maxWidth: "150px",
+      width: 'auto',
+      // height: '59px'
+    },
+    "& img.small": {
+      marginLeft: '0px',
+      maxWidth: "40px",
       width: 'auto',
       // height: '59px'
     },
@@ -172,7 +180,7 @@ export const useStyles = makeStyles(() => ({
       },
     },
     phoneIcon: {
-      display: "block",
+      display: "flex",
       color: "#a9a9a9",
       cursor: "pointer",
       marginLeft: '50px'

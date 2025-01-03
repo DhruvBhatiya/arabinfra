@@ -7,8 +7,9 @@ import { menuListDesktop, menuListMobile } from '../header/headerData';
 import { Container10, Container100, Container1140, Container1200, Container1320, Container1400, Container1440 } from '../shared/CustomContainer';
 import { useStyles } from './footer.style';
 import { ProductsLinks } from './footerData';
-import { slidesProducts } from '../../pages/home/homeData';
+
 import Whatsapp from '../shared/WhatsApp';
+import { slidesServices } from '../../pages/service/serviceData';
 
 
 const Footer = () => {
@@ -52,7 +53,7 @@ const Footer = () => {
                         <Box>
                             <TitleHead title="Our Services" />
                             <Box className={classes.quicklinks}>
-                                {slidesProducts && slidesProducts.map((db, index) => {
+                                {slidesServices && slidesServices.map((db, index) => {
                                     return (
                                         db.link !== '/offer-of-month' &&
                                         <NavLink className={'link hover:text-white'} key={index} to={db.link}>{db.title}</NavLink>

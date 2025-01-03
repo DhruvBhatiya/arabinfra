@@ -27,12 +27,6 @@ const Courses = () => {
   return (
     <>
       <Container1200 className={'py-20'}>
-        {/* <Box className={classes.blogStyleParent + ' ' + 'grid grid-cols-3 gap-8'}>
-          <CardHoverZoom data={slidesProducts} />
-        </Box> */}
-
-
-
         <CardContent sx={{paddingTop: 0}} >
           <Typography component="div" variant="h4" sx={{ marginBottom: '15px', fontWeight: '600' }}>
             Training & Courses

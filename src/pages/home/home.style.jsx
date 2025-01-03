@@ -1,11 +1,9 @@
 import { makeStyles } from "@mui/styles";
-import { theme } from "../../theme";
-// import visionBg from "../../assets/img/images/bg/vision-design.webp"
-import productSlider from "../../assets/img/images/bg/product-bg.webp"
-import whyChooseBg from "../../assets/img/images/bg/ag-pic-18.webp"
-import growMoreBgg from "../../assets/img/images/bg/bg-section-01.webp"
-import { servicebg, visionBg } from "../../Images";
+import whyChooseBg from "../../assets/bg/ag-pic-18.webp";
+import growMoreBgg from "../../assets/bg/bg-section-01.webp";
 import Colors from "../../Colors";
+import { servicebg } from "../../Images";
+import { theme } from "../../theme";
 
 
 
@@ -245,12 +243,12 @@ export const useStyles = makeStyles(() => ({
     // =====================================
     productsSliderStyle: {
 
-        "& .MuiBox-root":{
+        "& .MuiBox-root": {
             marginTop: '0 !important',
         },
 
 
-        "backgroundColor": "#ffc000",
+        "backgroundColor": "#031d31",
         // "backgroundImage": `url(${process.env.REACT_APP_IMAGES_PATH}/images/bg/product-bg.webp)`,
         backgroundImage: `url(${servicebg})`,
         backgroundSize: '100%',
@@ -317,6 +315,8 @@ export const useStyles = makeStyles(() => ({
 
     // ====================================
     // ====================================
+
+
     [theme.breakpoints.down('md')]: {
         main_slider: {
             "& .slick-list": {
@@ -328,8 +328,12 @@ export const useStyles = makeStyles(() => ({
             },
 
             "& .title": {
-                "fontSize":"2rem","fontWeight":"bold","textAlign":"center","wordWrap":"break-word","whiteSpace":"normal","overflow":"hidden","lineHeight":"1.5"
-              }
+                "fontSize": "2rem", "fontWeight": "bold", "textAlign": "center", "wordWrap": "break-word", "whiteSpace": "normal", "overflow": "hidden", "lineHeight": "1.5"
+            },
+
+
+          
+
         },
 
         ourCounter: {

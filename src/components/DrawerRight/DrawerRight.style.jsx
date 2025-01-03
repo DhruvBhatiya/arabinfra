@@ -48,6 +48,11 @@ export const useStyles = makeStyles(() => ({
             "top": "7px",
         },
 
+        "& .active":{
+            fontWeight: "bold !important", // Optional: Highlight active link with bold text
+            color: '#022da8 !important' 
+        }
+
     },
 
     closeBtn: {
@@ -56,7 +61,9 @@ export const useStyles = makeStyles(() => ({
     menuLink: {
         "color": "#666",
         "display": "block", "fontSize": "0.9rem", "fontWeight": "600", "letterSpacing": "0.09375rem", "textTransform": "uppercase", "margin": "0 9px", "lineHeight": "20px", "textDecoration": "none",
-        padding: '10px 0'
+        padding: '10px 0',
+
+       
 
     },
 

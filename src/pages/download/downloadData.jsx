@@ -1,5 +1,8 @@
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+// Download 
+import buildingPermissionGuj from '../../assets/download/building-permission-guj.jpg';
+import buildingPermission from '../../assets/download/building-permission.jpg';
+import doc from '../../assets/download/doc.jpg';
+import villageBuildingPermission from '../../assets/download/village-building-permission.jpg';
 
 import formA from "../../assets/download/FormA.pdf"
 import formB from "../../assets/download/FormB.pdf"
@@ -15,8 +18,6 @@ import newEngineer from "../../assets/download/નવું એન્જીન�
 import newSelfDiclaration2 from "../../assets/download/નવું સેલ્ફ ડીકલેરેશન ૨.pdf"
 import newSelfAffi from "../../assets/download/સ્વ પ્રમાણિત નવું એફિડેવિટ.pdf"
 // import practiceDrawing from "../../assets/download/practice drawing.dwg"
-
-import { buildingPermission, buildingPermissionGuj, commanBg, doc, noImage, villageBuildingPermission } from '../../Images';
 
 
 export const downloadData = [

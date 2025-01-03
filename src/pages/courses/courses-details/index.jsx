@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react'
-import { useStyles } from './coursesDetails.style';
-import { Container1200 } from '../../../components/shared/CustomContainer';
 import { Box, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
-import { noImage } from '../../../Images';
-import Colors from '../../../Colors';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { slidesProducts } from '../../home/homeData';
+import Colors from '../../../Colors';
+import { Container1200 } from '../../../components/shared/CustomContainer';
 import { coursesData } from '../coursesData';
+import { useStyles } from './coursesDetails.style';
 
 const CoursesDetails = ({setCoursesTitle}) => {
   const classes = useStyles();

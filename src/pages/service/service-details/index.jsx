@@ -5,7 +5,7 @@ import { Box, Card, CardContent, CardMedia, Grid, Typography } from '@mui/materi
 import { noImage } from '../../../Images';
 import Colors from '../../../Colors';
 import { useParams } from 'react-router-dom';
-import { slidesProducts } from '../../home/homeData';
+import { slidesServices } from '../serviceData';
 
 const ServiceDetails = ({setServiceTitle}) => {
   const classes = useStyles();
@@ -25,7 +25,7 @@ const ServiceDetails = ({setServiceTitle}) => {
 
  
 
-  const service = slidesProducts.find((item) => item.link.endsWith(`/${id}`)); // Find the matching item
+  const service = slidesServices.find((item) => item.link.endsWith(`/${id}`)); // Find the matching item
 
   useEffect(()=>{
     setServiceTitle(service.title)

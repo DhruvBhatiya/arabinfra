@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { Container1200 } from '../../components/shared/CustomContainer';
 import { useStyles } from './contact.style';
 import ContactForm from './ContactForm';
+import EmailForm from './EmailForm';
 
 const Contact = () => {
   const classes = useStyles();
@@ -62,6 +63,7 @@ const Contact = () => {
               {/* Right Column: Contact Form */}
               <div className="w-full ">
                 <ContactForm />
+                {/* <EmailForm /> */}
               </div>
 
             </Grid>

@@ -10,6 +10,7 @@ import { Container10 } from "../shared/CustomContainer";
 import { useStyles } from "./header.style";
 import { adminLinks, menuListDesktop } from "./headerData";
 import youtubeLogo from "../../assets/img/logo/youtube.png"
+import youtubeLogoSmall from "../../assets/img/logo/youtube_small.png"
 const Header = () => {
   const classes = useStyles();
   const location = useLocation();
@@ -98,10 +99,16 @@ const Header = () => {
 
 
             {!isAdmin && (
-              <Box className={classes.phoneIcon}>
-                <NavLink to="/contact">
+              <Box className={classes.phoneIcon + ' ' + 'flex items-center '}>
+                {/* <NavLink to="/contact">
                   <PhoneInTalkIcon />
-                </NavLink>
+                </NavLink> */}
+
+                <Box className={classes.youtubeLogo + ' ' + ' block xl:hidden'}>
+                  <a href="https://youtube.com/@vipul2412?si=zwxa_iN6YTT_0q94" target="_blank">
+                    <img src={youtubeLogoSmall} alt="My Image 11" className="small " />
+                  </a>
+                </Box>
               </Box>
             )}
 
@@ -170,9 +177,9 @@ const Header = () => {
               <Button onClick={handleLogout} color="inherit">Logout</Button>
             )}
 
-            <Box className={classes.youtubeLogo + ' ' + ' hidden md:block'}>
+            <Box className={classes.youtubeLogo + ' ' + ' hidden xl:block'}>
               <a href="https://youtube.com/@vipul2412?si=zwxa_iN6YTT_0q94" target="_blank">
-                <img src={youtubeLogo} alt="My Image 11" className="w-32" />
+                <img src={youtubeLogo} alt="My Image 11" className="w-32 " />
               </a>
             </Box>
 

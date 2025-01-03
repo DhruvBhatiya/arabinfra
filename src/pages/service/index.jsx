@@ -6,8 +6,9 @@ import {
 } from "../../components/shared/CustomContainer";
 import { useStylesGloble } from "../../global.style";
 import { useStyles } from "./service.style";
-import { slidesProducts } from "../home/homeData";
+
 import CardMui from "../../components/shared/CardMui";
+import { slidesServices } from "./serviceData";
 
 const Services = () => {
   const global = useStylesGloble();
@@ -29,12 +30,12 @@ const Services = () => {
     <>
       <Container1200 className={'py-20'}>
         {/* <Box className={classes.blogStyleParent + ' ' + 'grid grid-cols-3 gap-8'}>
-          <CardHoverZoom data={slidesProducts} />
+          <CardHoverZoom data={slidesServices} />
         </Box> */}
 
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={4}>
-            {slidesProducts.map((db, index) => (
+            {slidesServices.map((db, index) => (
               <Grid item lg={4} md={4} sm={6} xs={12}>
                 <CardMui data={db} index={index} />
               </Grid>

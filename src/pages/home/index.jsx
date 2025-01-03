@@ -15,11 +15,10 @@ import { fetchSliders } from "../../state-management/admin/slider/getAllSliders/
 import { useStyles } from "./home.style";
 import {
   settingsMainSlider,
-  settingsProductsSlider,
   slidesMain,
-  slidesProducts,
   WhyChooseData
 } from "./homeData";
+import { settingsServicesSlider, slidesServices } from "../service/serviceData";
 
 const Home = () => {
   const global = useStylesGloble();
@@ -65,9 +64,9 @@ const Home = () => {
           {slidesMain.map((slide, index) => (
             <Box key={index} className={global.slide}>
               <img className={global.bannerImg} src={slide.image} alt="" />
-              <div className={'w-96 lg:w-full'}>
+              {/* <div className={'w-[90%] lg:w-full'}>
                 <h1 className='title '>{slide.content}</h1>
-              </div>
+              </div> */}
             </Box>
           ))}
         </CarouselComponent>
@@ -123,8 +122,8 @@ const Home = () => {
         <Box className={"bg-[#0000006b]  "}>
           <Container1200 className={"  "} >
             <TitleSection title={"Our Services"} className={"productTitle"} />
-            <CarouselComponent settings={settingsProductsSlider} >
-              {slidesProducts.map((slide, index) => (
+            <CarouselComponent settings={settingsServicesSlider} >
+              {slidesServices.map((slide, index) => (
                 <CarouselCard slide={slide} />
               ))}
             </CarouselComponent>
